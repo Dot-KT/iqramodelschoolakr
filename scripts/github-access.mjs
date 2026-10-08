@@ -32,7 +32,7 @@ try {
   if (mode === 'check') {
     console.log(JSON.stringify({ available: true, login: user.login }));
   } else if (mode === 'create') {
-    const name = 'iqra-model-school';
+    const name = 'iqramodelschoolakr';
     let repository;
     try { repository = await api(`/repos/${user.login}/${name}`); }
     catch (error) {
@@ -41,7 +41,7 @@ try {
     }
     console.log(JSON.stringify({ login: user.login, repository: repository.full_name, url: repository.html_url, clone_url: repository.clone_url, empty: repository.size === 0 }));
   } else if (mode === 'pages') {
-    const repository = `${user.login}/iqra-model-school`;
+    const repository = `${user.login}/iqramodelschoolakr`;
     let pages;
     try { pages = await api(`/repos/${repository}/pages`); }
     catch (error) {
@@ -50,10 +50,10 @@ try {
     }
     console.log(JSON.stringify({ repository, url: pages.html_url, status: pages.status, build_type: pages.build_type }));
   } else if (mode === 'domain') {
-    const pages = await api(`/repos/${user.login}/iqra-model-school/pages`, 'PUT', { cname: 'iqramodelschoolakr.com.ng' });
+    const pages = await api(`/repos/${user.login}/iqramodelschoolakr/pages`, 'PUT', { cname: 'iqramodelschoolakr.com.ng' });
     console.log(JSON.stringify({ domain: pages.cname, url: pages.html_url, status: pages.status }));
   } else if (mode === 'status') {
-    const repository = `${user.login}/iqra-model-school`;
+    const repository = `${user.login}/iqramodelschoolakr`;
     const pages = await api(`/repos/${repository}/pages`);
     const runs = await api(`/repos/${repository}/actions/runs?per_page=3`);
     console.log(JSON.stringify({ url: pages.html_url, status: pages.status, domain: pages.cname, https_enforced: pages.https_enforced, runs: runs.workflow_runs.map(run => ({ id: run.id, status: run.status, conclusion: run.conclusion, url: run.html_url })) }));
