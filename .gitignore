@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.qa/
+.asset-research/
+*.zip
+.env
+.env.*
+!.env.example
+.DS_Store

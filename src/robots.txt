@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://iqramodelschoolakr.com.ng/sitemap.xml
